@@ -39,12 +39,24 @@ export async function fetchPostDetails(postId: number): Promise<Post> {
   }
   return response.json();
 }
+const userCache = new Map<number, User>();
+
 export async function fetchUserDetails(userId: number): Promise<User> {
+  // Check cache first
+  if (userCache.has(userId)) {
+    return userCache.get(userId)!;
+  }
+
   const response = await fetch(`${BASE_URL}/users/${userId}`);
   if (!response.ok) {
     throw new Error("Failed to fetch user details");
   }
-  return response.json();
+  
+  const data: User = await response.json();
+  // Save to cache
+  userCache.set(userId, data);
+  
+  return data;
 }
 export async function fetchComments(postId: number): Promise<comment[]> {
   const response = await fetch(`${BASE_URL}/posts/${postId}/comments`);
