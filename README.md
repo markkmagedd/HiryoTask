@@ -19,9 +19,8 @@ A high-performance, modern React Native social feed application built using **Ex
 
 | ☀️ Light Mode Feed | 🌙 Dark Mode Feed | 💬 Discussion & Skeletons |
 | :---: | :---: | :---: |
-| *[Add Light Feed Screenshot]* | *[Add Dark Feed Screenshot]* | *[Add Details/Skeleton Screenshot]* |
+| <img src="./screenshots/light_feed.png" width="250" /> | <img src="./screenshots/dark_feed.png" width="250" /> | <img src="./screenshots/post_details.png" width="250" /> |
 
-*(Note: Please replace the placeholders above with your simulator or physical device screenshots before submitting!)*
 
 ---
 
